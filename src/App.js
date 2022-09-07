@@ -11,7 +11,7 @@ function App() {
     <div className='App_Container'>
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/crypto-tracker' element={<HomePage />} />
         <Route path='/chart' element={<ChartPage />}/>
         <Route path='/blog' element={<BlogPage />}/>
         <Route path='/chart/:id' element={<CoinPage />}/>

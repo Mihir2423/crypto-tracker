@@ -9,7 +9,7 @@ export default function Header() {
     const navigate = useNavigate();
     const onBackClick = e => {
         e.preventDefault()
-        navigate("/")
+        navigate("/crypto-tracker")
     }
     return (
         <div className="header_container">
