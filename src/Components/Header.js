@@ -20,7 +20,7 @@ export default function Header() {
             <nav className="header_nav">
                 <ul>
                     <li>
-                        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
+                        <Link to="/crypto-tracker" style={{ textDecoration: "none", color: "inherit" }}>Home</Link>
                     </li>
                     <li>
                         <Link to="/chart" style={{ textDecoration: "none", color: "inherit" }}>Chart</Link>
