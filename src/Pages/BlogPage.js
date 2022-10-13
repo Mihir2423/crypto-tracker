@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react"
 import Blog from "../Components/Blog"
 import { CoinList } from "../config/api";
 import { CryptoState } from "../context";
-import Preloader from "../Components/preloader"
+import Preloader from "../Components/blog_preloader"
 
 export default function BlogPage() {
     const [preloader, setPreloader] = useState(false)
@@ -12,7 +12,7 @@ export default function BlogPage() {
     setPreloader(true)
     setTimeout(() => {
       setPreloader(false)
-    }, 1500);
+    }, 2500);
   }, [])
     const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
     const [newsCategory, setNewsCategory] = React.useState('Cryptocurrency');

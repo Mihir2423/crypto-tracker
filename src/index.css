@@ -29,6 +29,14 @@ code {
   position: fixed;
   z-index: 100;
 }
+.blog-preloader {
+  background: #0c0c46 url('./Images/blog_preloader.gif') no-repeat center center;
+  background-size: 30%;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: 100;
+}
 body::-webkit-scrollbar{
   display: none;
 }
@@ -463,6 +471,7 @@ body::-webkit-scrollbar{
   height: 80px;
   border-bottom: 1px solid #d7d7d7;
   width: 900px;
+  cursor: pointer;
 }
 
 .coin_ {
