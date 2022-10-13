@@ -1,12 +1,19 @@
 import axios from "axios"
 import moment from "moment";
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Blog from "../Components/Blog"
 import { CoinList } from "../config/api";
 import { CryptoState } from "../context";
-
+import Preloader from "../Components/preloader"
 
 export default function BlogPage() {
+    const [preloader, setPreloader] = useState(false)
+  useEffect(() => {
+    setPreloader(true)
+    setTimeout(() => {
+      setPreloader(false)
+    }, 1500);
+  }, [])
     const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
     const [newsCategory, setNewsCategory] = React.useState('Cryptocurrency');
     const [news, setNews] = React.useState([])
@@ -50,6 +57,8 @@ export default function BlogPage() {
         fetchcoinsnews()
     }, [currency])
     return (
+        <>
+        {preloader === true ? <Preloader /> :
         <div className="_blogContainer">
             <h1 className="_title">Get Latest Crypto News</h1>
             <select id="input" value={news.name}
@@ -63,5 +72,7 @@ export default function BlogPage() {
                 {blog}
             </div>
         </div>
+        }
+                </>
     )
 }

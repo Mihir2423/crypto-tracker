@@ -5,12 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  /* overflow: hidden; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.preloader {
+  background: #0c0c46 url('./Images/preloader.gif') no-repeat center center;
+  background-size: 30%;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: 100;
+}
+.chart-preloader {
+  background: #0c0c46 url('./Images/chart-preloader.gif') no-repeat center center;
+  background-size: 30%;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: 100;
+}
+body::-webkit-scrollbar{
+  display: none;
 }
 
 .header_container {
@@ -449,7 +469,7 @@ code {
   display: flex;
   align-items: center;
   padding-right: 24px;
-
+  
   min-width: 300px;
 }
 
@@ -507,6 +527,7 @@ code {
   color: white;
   min-height: 100%;
   display: flex;
+  overflow: hidden;
 }
 
 .single_container_left {

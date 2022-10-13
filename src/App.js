@@ -5,19 +5,31 @@ import HomePage from "./Pages/HomePage"
 import ChartPage from ".//Pages/ChartPage"
 import BlogPage from ".//Pages/BlogPage"
 import CoinPage from './Pages/CoinPage';
+import Preloader from "./Components/preloader"
+import { useEffect, useState } from 'react';
 function App() {
+  const [preloader, setPreloader] = useState(false)
+  useEffect(() => {
+    setPreloader(true)
+    setTimeout(() => {
+      setPreloader(false)
+    }, 3000);
+  }, [])
   return (
-    <BrowserRouter>
-    <div className='App_Container'>
-      <Header />
-      <Routes>
-        <Route path='/crypto-tracker' element={<HomePage />} />
-        <Route path='/chart' element={<ChartPage />}/>
-        <Route path='/blog' element={<BlogPage />}/>
-        <Route path='/chart/:id' element={<CoinPage />}/>
-      </Routes>
-    </div>
-    </BrowserRouter>
+    <>
+      {preloader === true ? <Preloader /> :
+        <BrowserRouter>
+          <div className='App_Container'>
+            <Header />
+            <Routes>
+              <Route path='/crypto-tracker' element={<HomePage />} />
+              <Route path='/chart' element={<ChartPage />} />
+              <Route path='/blog' element={<BlogPage />} />
+              <Route path='/chart/:id' element={<CoinPage />} />
+            </Routes>
+          </div>
+        </BrowserRouter>}
+    </>
   );
 }
 
