@@ -6,8 +6,6 @@ import { CryptoState } from "../context"
 import { Chart as ChartJS, registerables } from 'chart.js';
 ChartJS.register(...registerables);
 
-
-
 export default function Chart({ coin, id }) {
     const [historicData, setHistoricData] = useState()
     const [days, setDays] = useState(1)
@@ -19,6 +17,8 @@ export default function Chart({ coin, id }) {
     }
     useEffect(() => {
         fetchInfo()
+        setDays(1)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currency, days])
     console.log(historicData)
     return (
@@ -33,7 +33,6 @@ export default function Chart({ coin, id }) {
                       : `${date.getHours()}:${date.getMinutes()} AM`;
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
-                
 
                 datasets: [
                   {

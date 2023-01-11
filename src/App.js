@@ -7,6 +7,7 @@ import BlogPage from ".//Pages/BlogPage"
 import CoinPage from './Pages/CoinPage';
 import Preloader from "./Components/preloader"
 import { useEffect, useState } from 'react';
+// import TestPage from './Pages/TestPage';
 function App() {
   const [preloader, setPreloader] = useState(false)
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
               <Route path='/chart' element={<ChartPage />} />
               <Route path='/blog' element={<BlogPage />} />
               <Route path='/chart/:id' element={<CoinPage />} />
+              {/* <Route path='/test' element={<TestPage />} /> */}
             </Routes>
           </div>
         </BrowserRouter>}
