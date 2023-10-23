@@ -9,7 +9,7 @@ import Preloader from "../Components/blog_preloader";
 export default function BlogPage() {
   const [preloader, setPreloader] = useState(false);
   useEffect(() => {
-    setPreloader(false);
+    setPreloader(true);
     setTimeout(() => {
       setPreloader(false);
     }, 2500);
